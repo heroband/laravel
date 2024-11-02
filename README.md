@@ -22,19 +22,19 @@ Install dependency
 docker compose exec php composer install
 ```
 
-Change permissions to created project
+Change permissions to created project  (only Linux)
 ```bash
 sudo chown $(id -u):$(id -g) ./ -Rf
 ```
 
-Change permissions to storage folder
+Change permissions to storage folder (only Linux)
 ```bash
 sudo chmod 777 storage/ -Rf
 ```
 
 Generate app key
 ```bash
-docker compose exec --user $(id -u):$(id -g) php ./artisan key:generate
+docker compose exec php ./artisan key:generate
 ```
 
 
