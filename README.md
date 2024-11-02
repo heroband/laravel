@@ -1,7 +1,7 @@
 ## Prepare
 
 ```bash
-git clone git@gitlab.mobidev.biz:a.khoroshun/laravel-skillsup.git .
+git clone https://github.com/Khoroshun/laravel-setup.git .
 ```
 
 ```bash
@@ -50,4 +50,9 @@ Migrate database
 ```bash
 docker compose exec php ./artisan migrate --seed          
 ```                                                                                        
-                                                                                           
+
+### Project links
+
+**Project** - http://127.0.0.1:8080
+
+**DB** - http://127.0.0.1:8084/?pgsql=postgres
