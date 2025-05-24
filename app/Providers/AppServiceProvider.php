@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Task;
+use App\Observers\TaskObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Task::observe(TaskObserver::class);
     }
+
+    protected $listen = [
+        \App\Events\TaskCreated::class => [
+            \App\Listeners\NotifyAssignee::class,
+        ],
+    ];
 }
